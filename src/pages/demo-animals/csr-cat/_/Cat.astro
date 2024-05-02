@@ -1,0 +1,17 @@
+---
+import PictureFrame from '@/components/PictureFrame.astro';
+---
+
+<script>
+  const imgUrl = await fetch('http://shibe.online/api/cats')
+    .then((response) => response.json())
+    .then((dataset) => dataset[0]);
+
+  const cat = document.getElementById('cat') as HTMLImageElement;
+
+  cat.src = imgUrl;
+</script>
+
+<PictureFrame>
+  <img id="cat" alt="Random Cat Image" />
+</PictureFrame>

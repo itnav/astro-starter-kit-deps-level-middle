@@ -1,0 +1,19 @@
+---
+import Navigation from '@/components/Navigation.astro';
+import Layout from '@/layouts/Layout.astro';
+import Bird from './_/Bird.astro';
+---
+
+<Layout title="Dog">
+  <Navigation />
+
+  <Bird />
+
+  <h1 class="title">SSG</h1>
+</Layout>
+
+<style scoped>
+  .title {
+    margin-top: 40px;
+  }
+</style>

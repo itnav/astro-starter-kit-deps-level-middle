@@ -1,0 +1,11 @@
+---
+import PictureFrame from '@/components/PictureFrame.astro';
+
+const imgUrl = await fetch('http://shibe.online/api/shibes')
+  .then((response) => response.json())
+  .then((dataset) => dataset[0]);
+---
+
+<PictureFrame>
+  <img src={imgUrl} alt="Random Shiba Image" />
+</PictureFrame>

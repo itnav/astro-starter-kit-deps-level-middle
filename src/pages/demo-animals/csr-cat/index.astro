@@ -1,0 +1,19 @@
+---
+import Navigation from '@/components/Navigation.astro';
+import Layout from '@/layouts/Layout.astro';
+import Cat from './_/Cat.astro';
+---
+
+<Layout title="Cat">
+  <Navigation />
+
+  <Cat />
+
+  <h1 class="title">CSR</h1>
+</Layout>
+
+<style scoped>
+  .title {
+    margin-top: 40px;
+  }
+</style>

@@ -1,0 +1,54 @@
+<script>
+  class Counter extends HTMLElement {
+    shadowRoot: ShadowRoot = super.shadowRoot!;
+
+    button: HTMLElement = super.querySelector('button')!;
+
+    count = 0;
+
+    constructor() {
+      super();
+
+      this.button.addEventListener('click', () => this.increment());
+      this.button.textContent = `Count: 0`;
+    }
+
+    increment() {
+      this.count++;
+      this.button.textContent = `Count: ${this.count}`;
+    }
+  }
+
+  customElements.define('astro-counter', Counter);
+</script>
+
+<astro-counter>
+  <button class="counter"></button>
+</astro-counter>
+
+<style scoped lang="scss">
+  astro-counter {
+    display: contents;
+  }
+
+  .counter {
+    padding: 0.6em 1.2em;
+    font-family: inherit;
+    font-size: 1em;
+    font-weight: 500;
+    cursor: pointer;
+    background-color: #f9f9f9;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    transition: border-color 0.25s;
+
+    &:hover {
+      border-color: #646cff;
+    }
+
+    &:focus,
+    &:focus-visible {
+      outline: 4px auto -webkit-focus-ring-color;
+    }
+  }
+</style>

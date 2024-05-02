@@ -1,0 +1,23 @@
+---
+import Navigation from '@/components/Navigation.astro';
+import Layout from '@/layouts/Layout.astro';
+import Dog from './_/Shiba.astro';
+
+// NOTE: この設定だけだと、開発環境では SSR になりますが、本番環境では SSG になります。
+//       本番環境でも SSR にしたい場合は、`astro.config.ts` の設定に `output: 'hybrid'` を追加し、さらに Server Adapter を追加する必要があります。
+export const prerender = false;
+---
+
+<Layout title="Dog">
+  <Navigation />
+
+  <Dog />
+
+  <h1 class="title">SSR</h1>
+</Layout>
+
+<style scoped>
+  .title {
+    margin-top: 40px;
+  }
+</style>
