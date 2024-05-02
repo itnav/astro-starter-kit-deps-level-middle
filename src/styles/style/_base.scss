@@ -1,0 +1,118 @@
+/// @see {@link https://github.com/mayank99/reset.css/blob/main/package/index.css} '@acab/reset.css'
+/// @see {@link https://github.com/Andy-set-studio/modern-css-reset/blob/master/src/reset.css} 'modern-reset-css'
+
+@use '..' as *;
+
+html {
+  font-size: 14px;
+  font-weight: 500;
+  color: $on-background;
+  tab-size: 2;
+  color-scheme: light dark;
+  background-color: $background;
+  font-synthesis: none;
+  text-size-adjust: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-tap-highlight-color: 'transparent';
+
+  @include media(pc) {
+    font-size: 16px;
+  }
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-height: 100dvh;
+  margin: 0;
+  line-height: 1.5;
+  scrollbar-gutter: stable;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  line-height: 1.1;
+  text-wrap: balance;
+}
+
+p,
+figure,
+blockquote,
+button,
+dl,
+dd {
+  margin: 0;
+}
+
+button,
+input,
+label {
+  line-height: 1.1;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  padding: 0;
+  cursor: pointer;
+  background-color: inherit;
+  border: none;
+  outline: none;
+}
+
+a {
+  text-underline-offset: 0.2ex;
+  text-decoration-skip-ink: auto;
+}
+
+img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
+  display: block;
+}
+
+img,
+picture,
+svg,
+video {
+  max-inline-size: 100%;
+  block-size: auto;
+}
+
+img {
+  width: auto;
+  min-width: 0;
+  max-width: 100%;
+  height: auto;
+  min-height: 0;
+  max-height: 100%;
+}
+
+:focus-visible {
+  outline: 3px solid CanvasText;
+  outline-offset: 1px;
+  box-shadow: 0 0 0 5px Canvas;
+}
+
+:focus-visible,
+:target {
+  scroll-margin-block: 8vh;
+}
