@@ -1,21 +1,19 @@
 <script>
   class Counter extends HTMLElement {
-    shadowRoot: ShadowRoot = super.shadowRoot!;
-
-    button: HTMLElement = super.querySelector('button')!;
+    buttonElemnet: HTMLElement = null!;
 
     count = 0;
 
     constructor() {
       super();
-
-      this.button.addEventListener('click', () => this.increment());
-      this.button.textContent = `Count: 0`;
+      const buttonEl = this.buttonElemnet = this.querySelector('button')!;
+      buttonEl.addEventListener('click', () => this.increment());
+      buttonEl.textContent = `Count: 0`;
     }
 
     increment() {
       this.count++;
-      this.button.textContent = `Count: ${this.count}`;
+      this.buttonElemnet.textContent = `Count: ${this.count}`;
     }
   }
 
